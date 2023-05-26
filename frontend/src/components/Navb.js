@@ -848,6 +848,21 @@ const Navb = () => {
     type: 2,
     link: ELECTRICAL + "&subCategoryName=WIRING-ACCESSORIES",
   };
+  var EC_PVC_CONDUIT = {
+    label: "PVC CONDUIT FITTINGS",
+    type: 3,
+    link: ELECTRICAL_WIRING_ACCESSORIES.link + "&childCategoryName=PVC-CONDUIT-FITTINGS",
+  };
+  var EC_CORRUGATED_CONDUIT = {
+    label: "CORRUGATED CONDUIT",
+    type: 3,
+    link: ELECTRICAL_WIRING_ACCESSORIES.link + "&childCategoryName=CORRUGATED-CONDUIT",
+  };
+  var ELECTRICAL_CHARGERS = {
+    label: "CHARGERS",
+    type: 2,
+    link: ELECTRICAL + "&subCategoryName=CHARGERS",
+  };
   var ELECTRICAL_CABLES = {
     label: "CABLES",
     type: 2,
@@ -1046,17 +1061,17 @@ const Navb = () => {
     },
   ];
 
-  var EE_COMBINATIONS = {
-    label: "COMBINATIONS",
+  var EE_PVC_ADAPTABLE_BOXES = {
+    label: "PVC ADAPTABLE BOXES",
     type: 3,
-    link: ELECTRICAL_ENCLOSURES.link + "&childCategoryName=COMBINATIONS",
+    link: ELECTRICAL_ENCLOSURES.link + "&childCategoryName=PVC-ADAPTABLE-BOXES",
   };
 
-  var EE_BATTERY_CABINET = {
-    label: "BATTERY CABINET",
-    type: 3,
-    link: ELECTRICAL_ENCLOSURES.link + "&childCategoryName=BATTERY-CABINET",
-  };
+  // var EE_BATTERY_CABINET = {
+  //   label: "BATTERY CABINET",
+  //   type: 3,
+  //   link: ELECTRICAL_ENCLOSURES.link + "&childCategoryName=BATTERY-CABINET",
+  // };
   //#endregion
 
   /* REAGENTS */
@@ -1304,10 +1319,10 @@ const Navb = () => {
         "&childCategoryName=MARKING-PAINT",
     },
     {
-      label: "AUTOMOTIVE",
+      label: "PAINT",
       type: 3,
       link:
-        INDUSTRIAL_PAINT_EQUIPMENT_SUPPLIES + "&childCategoryName=AUTOMOTIVE",
+        INDUSTRIAL_PAINT_EQUIPMENT_SUPPLIES + "&childCategoryName=PAINT",
     },
     {
       label: "AEROSOLS",
@@ -1373,6 +1388,12 @@ const Navb = () => {
       type: 3,
       link: INDUSTRIAL_HOSES_FITTINGS + "&childCategoryName=THREADED-FITTINGS",
     },
+  ];
+  var INDUSTRIAL_PIPE_REPAIR =
+    INDUSTRIAL + "&subCategoryName=PIPE-REPAIR";
+  var INDUSTRIAL_7 = [
+    { label: "PIPE REPAIR", type: 2, link: INDUSTRIAL_PIPE_REPAIR },
+
   ];
   //#endregion
 
@@ -1563,64 +1584,7 @@ const Navb = () => {
               </div>
             </div>
 
-            {/* FASTENERS
-            <div className="w3c_dropdown">
-              <div className="dropbtn">
-                <a href={FASTENERS}>FASTENERS</a>
-              </div>
-              <div className="dropdown-content">
-                <div className="row">
-                  <ul className="column">
-                    {FT_HIGH_TENSILE_FASTENERS_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                    {FT_STAINLESS_HARDWEAR_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="column">
-                    {FT_KITS_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                    {FT_STAINLESS_FASTENERS_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="column">
-                    {FT_LOW_TENSILE_FASTENERS_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                    {FT_SCREWS_3.map((item) => {
-                      return (
-                        <li key={item.link} className={nav_color[item.type]}>
-                          <a href={item.link}>{item.label} </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            </div> */}
+
 
             {/* FASTENERS */}
             <div className="w3c_dropdown">
@@ -1804,6 +1768,14 @@ const Navb = () => {
                         </li>
                       );
                     })}
+
+                    {INDUSTRIAL_7.map((item) => {
+                      return (
+                        <li key={item.link} className={nav_color[item.type]}>
+                          <a href={item.link}>{item.label} </a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -1908,18 +1880,12 @@ const Navb = () => {
                       </a>
                     </li>
                     <li>
-                      <a className="parentA" href={EE_COMBINATIONS.link}>
-                        {EE_COMBINATIONS.label}
+                      <a className="parentA" href={EE_PVC_ADAPTABLE_BOXES.link}>
+                        {EE_PVC_ADAPTABLE_BOXES.label}
                         {/* <span className="expand ms-2"> »</span> */}
                       </a>
                     </li>
 
-                    <li>
-                      <a className="parentA" href={EE_BATTERY_CABINET.link}>
-                        {EE_BATTERY_CABINET.label}
-                        {/* <span className="expand ms-2"> »</span> */}
-                      </a>
-                    </li>
                     <li className="parent childCat">
                       <a className="parentA" href={EE_WALL_MOUNTED.link}>
                         {EE_WALL_MOUNTED.label}
@@ -1992,11 +1958,28 @@ const Navb = () => {
                       </a>
                     </li>
                     <li className="subCat">
+                      <a className="parentA" href={ELECTRICAL_WIRING_ACCESSORIES.link}>
+                        {ELECTRICAL_WIRING_ACCESSORIES.label}
+                        {/* <span className="expand ms-2"> »</span> */}
+                      </a>
+                    </li>
+                    <li>
+                      <a className="parentA" href={EC_PVC_CONDUIT.link}>
+                        {EC_PVC_CONDUIT.label}
+                      </a>
+                    </li>
+                    <li>
+                      <a className="parentA" href={EC_CORRUGATED_CONDUIT.link}>
+                        {EC_CORRUGATED_CONDUIT.label}
+                      </a>
+                    </li>
+
+                    <li className="subCat">
                       <a
                         className="parentA"
-                        href={ELECTRICAL_WIRING_ACCESSORIES.link}
+                        href={ELECTRICAL_CHARGERS.link}
                       >
-                        {ELECTRICAL_WIRING_ACCESSORIES.label}
+                        {ELECTRICAL_CHARGERS.label}
                         {/* <span className="expand ms-2"> »</span> */}
                       </a>
                     </li>

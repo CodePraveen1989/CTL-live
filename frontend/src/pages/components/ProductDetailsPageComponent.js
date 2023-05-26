@@ -388,32 +388,28 @@ const ProductDetailsPageComponent = ({
                             whiteSpace: "pre-wrap",
                             textAlign: "left",
                             width: "97%",
+                            overflowWrap: "break-word",
                           }}
                         >
                           {/* {product.description} */}
                           {product.description
                             ? product.description
-                                .split("*")
-                                .map((item, index) => {
-                                  return (
+                              .split("*")
+                              .map((item, index) => {
+                                return (
+                                  index > 0 ? (
                                     <div key={index}>
-                                      {item.length > 200 ? (
-                                        <span>{item}</span>
-                                      ) : item.length > 98 ? (
-                                        <span>
-                                          * {item.slice(0, 98)}
-                                          <br />
-                                          &nbsp;&nbsp;&nbsp;&nbsp;
-                                          {item.slice(98)}
-                                        </span>
-                                      ) : item.length > 2 ? (
-                                        <span>* {item}</span>
-                                      ) : (
-                                        ""
-                                      )}
+                                      <span>* {item}</span>
                                     </div>
-                                  );
-                                })
+
+                                  ) : (
+                                    <div key={index}>
+                                      <span> {item}</span>
+                                    </div>
+                                  )
+
+                                );
+                              })
                             : ""}
                         </div>
                       </Tab>
