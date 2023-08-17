@@ -57,6 +57,22 @@ const productSchema = mongoose.Schema(
         },
       },
     ],
+    material: {
+      type: String,
+      required: true,
+    },
+    length: {
+      type: String,
+      required: true,
+    },
+    width: {
+      type: String,
+      required: true,
+    },
+    thickness: {
+      type: String,
+      required: true,
+    },
     supplier: {
       type: String,
       required: true,
